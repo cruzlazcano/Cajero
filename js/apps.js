@@ -153,7 +153,33 @@ aceptar.addEventListener('click', ()=>{
         display_datos.classList.add('show_display');
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
         agregar.classList.add('show_agregar');
+        
+    }
+    if (usuario == "francisco" && resultado == "5555"){
+        boton1.classList.remove('btn_izquierdo');
+        boton2.classList.remove('btn_derecho');
+        boton1.classList.add('show_boton1');
+        boton2.classList.add('show_boton2');
+        info.classList.remove('info');
+        info.classList.add('info_hidden');
+        display_datos.classList.remove('display_datos');
+        display_datos.classList.add('show_display');
+        txt_titulo.innerHTML = `Bienvenido ${usuario}`;
+        agregar.classList.add('show_agregar');
+        
+    }
 
+    if (usuario == "jesus" && resultado == "9999"){
+        boton1.classList.remove('btn_izquierdo');
+        boton2.classList.remove('btn_derecho');
+        boton1.classList.add('show_boton1');
+        boton2.classList.add('show_boton2');
+        info.classList.remove('info');
+        info.classList.add('info_hidden');
+        display_datos.classList.remove('display_datos');
+        display_datos.classList.add('show_display');
+        txt_titulo.innerHTML = `Bienvenido ${usuario}`;
+        agregar.classList.add('show_agregar');
         
     }
 });
@@ -186,21 +212,18 @@ btn_saldo.addEventListener('click',()=>{
             personas[0].saldo = suma;
             saldo.innerHTML = `Saldo ${suma}`
             agregar.classList.remove('show_agregar');
-            console.log(personas)
     
         }else if(personas[1].nombre == usuario){
             suma= parseInt(personas[1].saldo) + parseInt(agregar.value)
             personas[1].saldo = suma;
             saldo.innerHTML = `Saldo ${suma}`
             agregar.classList.remove('show_agregar');
-            console.log(personas)
     
         }else if(personas[2].nombre == usuario){
             suma= parseInt(personas[2].saldo) + parseInt(agregar.value)
             personas[2].saldo = suma;
             saldo.innerHTML = `Saldo ${suma}`
             agregar.classList.remove('show_agregar');
-            console.log(personas)
     
         }else{
             saldo.innerHTML = "No hay un usuario con saldo"
@@ -216,14 +239,14 @@ btn_saldo.addEventListener('click',()=>{
    btn_retiro.addEventListener('click', ()=>{
     let usuario = document.getElementById('usuario').value;
     let suma =0;
-
-    if (agregar.classList.contains('show_agregar')){
+    const valid =  billete.style.display = 'none'
+    if (agregar.classList.contains('show_agregar') && valid && !led.classList.contains('animated')){
         if (personas[0].nombre == usuario){
             resta= parseInt(personas[0].saldo) - parseInt(agregar.value)
             suma = personas[0].saldo;
             saldo.innerHTML = `Saldo ${resta}`
             agregar.classList.remove('show_agregar');
-            led.classList.toggle('animated');
+            led.classList.add('animated');
             billete.style.display = 'flex';
 
     
@@ -232,12 +255,16 @@ btn_saldo.addEventListener('click',()=>{
             personas[1].saldo = suma;
             saldo.innerHTML = `Saldo ${resta}`
             agregar.classList.remove('show_agregar');
+            led.classList.add('animated');
+            billete.style.display = 'flex';
     
         }else if(personas[2].nombre == usuario){
             resta= parseInt(personas[2].saldo) - parseInt(agregar.value)
             personas[2].saldo = suma;
             saldo.innerHTML = `Saldo ${resta}`
             agregar.classList.remove('show_agregar');
+            led.classList.add('animated');
+            billete.style.display = 'flex';
     
         }else{
             saldo.innerHTML = "No hay un usuario con saldo"
@@ -246,6 +273,8 @@ btn_saldo.addEventListener('click',()=>{
     }else{
         agregar.value=0;
         agregar.classList.add('show_agregar');
+        led.classList.remove('animated');
+
     }
     
    });
