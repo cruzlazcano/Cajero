@@ -11,29 +11,53 @@
     <div class="cajero">
         <div class="pantalla">
             <div class="display">
-                <div class="btn_izquierdo"></div>
-                <div class="btn_derecho"></div>
+                <div class="btn_izquierdo" id="boton1"><button id="btn_saldo" class="btn_saldo btn_touch">Saldo</button></div>
+                <div class="display_datos" id="display_datos">
+<!--------------------------------------------------------->
+                    <h3 id="txt_titulo"></h3>
+                  
+                    <h4 class="saldo" id="saldo"></h4>
+<!--------------------------------------------------------->
+                </div>
+                <div class="info" id="info">
+                    <h4 class="titulo">Ingrese el usuario</h4>
+                    <select name="usuario" id="usuario">
+                        <option value="raul">Raúl</option>
+                        <option value="francisco">Francisco</option>
+                        <option value="jesus">Jesus</option>
+                    </select>                    
+                    <p class="mostrar"></p>                 
+                    <h4 class="titulo">Ingrese el NIP</h4>
+                    <input type="text" id="nip" value="0">
+                    <p class="mostrar"></p>
+                </div>
+                <div class="botones">
+                    <div class="btn_derecho" id="boton2" >
+                        <button class="btn_monto btn_touch">Ingresar</button>
+                        <button class="btn_retiro btn_touch">Retiro</button>
+                    </div>
+                </div>
+               
             </div>
             <div class="dinero">
                 <div class="led"></div>
                 <div class="billete"></div>
             </div>
-
         </div>
     
         <div class="teclado">
-            <div class="teclas">1</div>
-            <div class="teclas">2</div>
-            <div class="teclas">3</div>
-            <div class="teclas">4</div>
-            <div class="teclas">5</div>
-            <div class="teclas">6</div>
-            <div class="teclas">7</div>
-            <div class="teclas">8</div>
-            <div class="teclas">9</div>
-            <div class="teclas">Aceptar</div>
-            <div class="teclas">Cancelar</div>
-            <div class="teclas">Salir</div>
+            <div class="teclas"><button class="btn" id="uno" value="1">1</button></div>
+            <div class="teclas"><button class="btn" id="cuatro">4</button></div>
+            <div class="teclas"><button class="btn" id="siete">7</button></div>
+            <div class="teclas"><button class="btn" id="dos">2</button></div>
+            <div class="teclas"><button class="btn" id="cinco">5</button></div>
+            <div class="teclas"><button class="btn" id="ocho">8</button></div>
+            <div class="teclas"><button class="btn" id="tres">3</button></div>
+            <div class="teclas"><button class="btn" id="seis">6</button></div>
+            <div class="teclas"><button class="btn" id="nueve">9</button></div>
+            <div class="teclas"><button class="btn" id="aceptar">OK</button></div>
+            <div class="teclas"><button class="btn" id="cancelar">Can</button></div>
+            <div class="teclas"><button class="btn" id="salir">OUT</button></div>
         </div>
     </div>
 <script src="js/apps.js"></script>

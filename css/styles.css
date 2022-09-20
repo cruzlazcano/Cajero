@@ -14,6 +14,11 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image:url("/img/fondo.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+
+
 }
 
 :root{
@@ -21,6 +26,7 @@ body{
     --primary-color2: rgb(23, 23, 43);
     --primary-color3: rgb(231, 236, 240);
     --primary-color4: rgb(94, 247, 81);
+    --button-hover: rgba(195, 228, 192, 0.836);
 
 
 }
@@ -28,7 +34,7 @@ body{
 .cajero{
     background: var(--primary-color);
     width: 35%;
-    height: 85vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -43,21 +49,82 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid white;
+
 }
 
 .display{
     background:var(--primary-color3);
-    height: 25vh;
-    width: 15vw;
+    height: 35vh;
+    width: 18vw;
+    display: flex;
+    align-items: flex-end;
     
 }
 
+.display_datos{
+    display: none;
+}
+
+.show_display{
+    display: flex;
+    height:35vh;
+    width: 10vw;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgb(202, 50, 50);
+
+}
+.btn_izquierdo{
+    height:80px;
+    width: 4vw;
+    display: none;
+
+}
+.info{
+    height:35vh;
+    width: 10vw;
+
+}
+
+.info_hidden{
+    display:none;
+}
+
+.btn_derecho{
+   display: none;
+
+}
+.show_boton1{
+    height: 80px;
+    width: 4vw;
+}
+.show_boton2{
+    height: 80px;
+    width: 4vw;
+}
+.btn_touch{
+    padding: 2px;
+    background: transparent;
+    border: transparent;
+    width: 100%;
+    margin-top:5px;
+    height: 40%;
+}
+
+.btn_touch:hover{
+    background: var(--button-hover);
+    font-size: 0.8rem;
+    cursor: pointer;
+
+}
 .dinero{
     height: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
 }
 .led{
     background: var(--primary-color4);
@@ -70,6 +137,25 @@ body{
     width: 17vw;
 }
 
+
+.datos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+
+}
+#txt_titulo{
+    text-align: center;
+    text-transform: capitalize;
+
+}
+#saldo{
+    text-align: center;
+    text-transform: capitalize;
+
+}
 /*Empieza el Teclado*/
 .teclado {
     background: var(--primary-color2);
@@ -94,7 +180,18 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2px;
     
 }
 
+.btn{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+.btn:hover{
+    background: var(--button-hover);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
 
