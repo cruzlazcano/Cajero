@@ -20,6 +20,9 @@ var btn_monto = document.getElementById('btn_monto');
 var btn_retiro = document.getElementById('btn_retiro');
 var agregar = document.getElementById('agregar');
 var retiro = document.getElementById('retiro');
+var led = document.getElementById('led');
+var billete = document.getElementById('billete');
+
 
 
 var personas = [{
@@ -149,6 +152,8 @@ aceptar.addEventListener('click', ()=>{
         display_datos.classList.remove('display_datos');
         display_datos.classList.add('show_display');
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
+        agregar.classList.add('show_agregar');
+
         
     }
 });
@@ -159,16 +164,13 @@ btn_saldo.addEventListener('click',()=>{
     console.log(personas[0].nombre == usuario);
     if (personas[0].nombre == usuario){
         saldo.innerHTML = `Saldo ${personas[0].saldo}`
-        agregar.classList.add('show_agregar');
 
 
     }else if(personas[1].nombre == usuario){
         saldo.innerHTML = `Saldo ${personas[1].saldo}`
-        agregar.classList.add('show_agregar');
 
     }else if(personas[2].nombre == usuario){
         saldo.innerHTML = `Saldo ${personas[2].saldo}`
-        agregar.classList.add('show_agregar');
 
     }else{
         saldo.innerHTML = "No hay un usuario con saldo"
@@ -178,31 +180,72 @@ btn_saldo.addEventListener('click',()=>{
 
    btn_monto.addEventListener('click',()=>{
     let usuario = document.getElementById('usuario').value;
-    if (personas[0].nombre == usuario){
-        suma= parseInt(personas[0].saldo) + parseInt(agregar.value)
-        personas[0].saldo = suma;
-        saldo.innerHTML = `Saldo ${suma}`
-        agregar.classList.remove('show_agregar');
-        console.log(personas)
-
-    }else if(personas[1].nombre == usuario){
-        suma= parseInt(personas[1].saldo) + parseInt(agregar.value)
-        personas[1].saldo = suma;
-        saldo.innerHTML = `Saldo ${suma}`
-        agregar.classList.remove('show_agregar');
-        console.log(personas)
-
-    }else if(personas[2].nombre == usuario){
-        suma= parseInt(personas[2].saldo) + parseInt(agregar.value)
-        personas[2].saldo = suma;
-        saldo.innerHTML = `Saldo ${suma}`
-        agregar.classList.remove('show_agregar');
-        console.log(personas)
-
+    if (agregar.classList.contains('show_agregar')){
+        if (personas[0].nombre == usuario){
+            suma= parseInt(personas[0].saldo) + parseInt(agregar.value)
+            personas[0].saldo = suma;
+            saldo.innerHTML = `Saldo ${suma}`
+            agregar.classList.remove('show_agregar');
+            console.log(personas)
+    
+        }else if(personas[1].nombre == usuario){
+            suma= parseInt(personas[1].saldo) + parseInt(agregar.value)
+            personas[1].saldo = suma;
+            saldo.innerHTML = `Saldo ${suma}`
+            agregar.classList.remove('show_agregar');
+            console.log(personas)
+    
+        }else if(personas[2].nombre == usuario){
+            suma= parseInt(personas[2].saldo) + parseInt(agregar.value)
+            personas[2].saldo = suma;
+            saldo.innerHTML = `Saldo ${suma}`
+            agregar.classList.remove('show_agregar');
+            console.log(personas)
+    
+        }else{
+            saldo.innerHTML = "No hay un usuario con saldo"
+        }
+    
     }else{
-        saldo.innerHTML = "No hay un usuario con saldo"
+        agregar.classList.add('show_agregar');
+
     }
 
    });
    
-   /*btn_retiro.addEventListener();*/
+   btn_retiro.addEventListener('click', ()=>{
+    let usuario = document.getElementById('usuario').value;
+    let suma =0;
+
+    if (agregar.classList.contains('show_agregar')){
+        if (personas[0].nombre == usuario){
+            resta= parseInt(personas[0].saldo) - parseInt(agregar.value)
+            suma = personas[0].saldo;
+            saldo.innerHTML = `Saldo ${resta}`
+            agregar.classList.remove('show_agregar');
+            led.classList.toggle('animated');
+            billete.style.display = 'flex';
+
+    
+        }else if(personas[1].nombre == usuario){
+            resta= parseInt(personas[1].saldo) - parseInt(agregar.value)
+            personas[1].saldo = suma;
+            saldo.innerHTML = `Saldo ${resta}`
+            agregar.classList.remove('show_agregar');
+    
+        }else if(personas[2].nombre == usuario){
+            resta= parseInt(personas[2].saldo) - parseInt(agregar.value)
+            personas[2].saldo = suma;
+            saldo.innerHTML = `Saldo ${resta}`
+            agregar.classList.remove('show_agregar');
+    
+        }else{
+            saldo.innerHTML = "No hay un usuario con saldo"
+        }
+
+    }else{
+        agregar.value=0;
+        agregar.classList.add('show_agregar');
+    }
+    
+   });
