@@ -156,6 +156,12 @@ body{
     text-transform: capitalize;
 
 }
+.agregar{
+    display: none;
+}
+.show_agregar{
+    display: flex;
+}
 /*Empieza el Teclado*/
 .teclado {
     background: var(--primary-color2);

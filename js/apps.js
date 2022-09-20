@@ -16,6 +16,11 @@ var display_datos = document.getElementById('display_datos');
 var txt_titulo=document.getElementById('txt_titulo');
 var btn_saldo = document.getElementById('btn_saldo');
 var saldo = document.getElementById('saldo');
+var btn_monto = document.getElementById('btn_monto');
+var btn_retiro = document.getElementById('btn_retiro');
+var agregar = document.getElementById('agregar');
+var retiro = document.getElementById('retiro');
+
 
 var personas = [{
         nombre: "raul",
@@ -154,13 +159,50 @@ btn_saldo.addEventListener('click',()=>{
     console.log(personas[0].nombre == usuario);
     if (personas[0].nombre == usuario){
         saldo.innerHTML = `Saldo ${personas[0].saldo}`
+        agregar.classList.add('show_agregar');
+
 
     }else if(personas[1].nombre == usuario){
         saldo.innerHTML = `Saldo ${personas[1].saldo}`
+        agregar.classList.add('show_agregar');
+
     }else if(personas[2].nombre == usuario){
         saldo.innerHTML = `Saldo ${personas[2].saldo}`
+        agregar.classList.add('show_agregar');
+
     }else{
         saldo.innerHTML = "No hay un usuario con saldo"
     }
 
    });
+
+   btn_monto.addEventListener('click',()=>{
+    let usuario = document.getElementById('usuario').value;
+    if (personas[0].nombre == usuario){
+        suma= parseInt(personas[0].saldo) + parseInt(agregar.value)
+        personas[0].saldo = suma;
+        saldo.innerHTML = `Saldo ${suma}`
+        agregar.classList.remove('show_agregar');
+        console.log(personas)
+
+    }else if(personas[1].nombre == usuario){
+        suma= parseInt(personas[1].saldo) + parseInt(agregar.value)
+        personas[1].saldo = suma;
+        saldo.innerHTML = `Saldo ${suma}`
+        agregar.classList.remove('show_agregar');
+        console.log(personas)
+
+    }else if(personas[2].nombre == usuario){
+        suma= parseInt(personas[2].saldo) + parseInt(agregar.value)
+        personas[2].saldo = suma;
+        saldo.innerHTML = `Saldo ${suma}`
+        agregar.classList.remove('show_agregar');
+        console.log(personas)
+
+    }else{
+        saldo.innerHTML = "No hay un usuario con saldo"
+    }
+
+   });
+   
+   /*btn_retiro.addEventListener();*/
