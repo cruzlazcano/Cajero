@@ -22,7 +22,7 @@ var agregar = document.getElementById('agregar');
 var retiro = document.getElementById('retiro');
 var led = document.getElementById('led');
 var billete = document.getElementById('billete');
-
+var salir = document.getElementById('salir');
 
 
 var personas = [{
@@ -153,6 +153,7 @@ aceptar.addEventListener('click', ()=>{
         display_datos.classList.add('show_display');
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
         agregar.classList.add('show_agregar');
+        saldo.classList.remove('saldo');
         
     }
     if (usuario == "francisco" && resultado == "5555"){
@@ -166,6 +167,8 @@ aceptar.addEventListener('click', ()=>{
         display_datos.classList.add('show_display');
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
         agregar.classList.add('show_agregar');
+        saldo.classList.remove('saldo');
+
         
     }
 
@@ -180,6 +183,8 @@ aceptar.addEventListener('click', ()=>{
         display_datos.classList.add('show_display');
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
         agregar.classList.add('show_agregar');
+        saldo.classList.remove('saldo');
+
         
     }
 });
@@ -277,4 +282,20 @@ btn_saldo.addEventListener('click',()=>{
 
     }
     
+   });
+
+salir.addEventListener('click', ()=>{
+    document.getElementById('nip').value=0;
+    document.getElementById('usuario').value=="";
+    info.classList.add('info');
+    info.classList.remove('info_hidden');
+    boton1.classList.add('btn_izquierdo');
+    boton2.classList.add('btn_derecho');
+    boton1.classList.remove('show_boton1');
+    boton2.classList.remove('show_boton2');
+    agregar.classList.remove('show_agregar');
+    display_datos.classList.remove('show_display');
+    display_datos.classList.add('display_datos');
+
+
    });

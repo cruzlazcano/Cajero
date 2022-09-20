@@ -86,14 +86,21 @@ body{
 }
 .info{
     height:35vh;
-    width: 10vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid yellow;
 
 }
 
 .info_hidden{
     display:none;
 }
-
+.info input{
+    width: 50%;
+}
 .btn_derecho{
    display: none;
 
@@ -104,8 +111,10 @@ body{
 }
 .show_boton2{
     height: 80px;
-    width: 4vw;
+    width: 5vw;
 }
+
+
 .btn_touch{
     padding: 2px;
     background: transparent;
@@ -117,8 +126,14 @@ body{
 
 .btn_touch:hover{
     background: var(--button-hover);
-    font-size: 0.8rem;
     cursor: pointer;
+
+}
+.btn_touch:active{
+    width: 80%;
+    height: 38%;
+    font-size: 0.9rem;
+    border: 0.4 solid hsl(240, 10%, 80%);
 
 }
 .dinero{
@@ -240,10 +255,20 @@ body{
     background-color: transparent;
     width: 100%;
     height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: transparent;
 }
 .btn:hover{
     background: var(--button-hover);
-    font-size: 0.8rem;
     cursor: pointer;
 }
 
+.btn:active{
+    width: 80%;
+    height: 80%;
+    font-size: 0.7rem;
+
+}
