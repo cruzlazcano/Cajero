@@ -25,7 +25,7 @@ body{
     --primary-color: rgb(65, 99, 95);
     --primary-color2: rgb(23, 23, 43);
     --primary-color3: rgb(231, 236, 240);
-    --primary-color4: rgb(94, 102, 93);
+    --primary-color4: rgb(16, 138, 0);
     --primary-color5: rgb(57, 158, 37);
     --primary-color6: rgb(51, 255, 0);
     --primary-color6: rgb(58, 248, 10);
@@ -76,6 +76,7 @@ body{
     width: 10vw;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 
 }
 .btn_izquierdo{
@@ -99,7 +100,7 @@ body{
     display:none;
 }
 .info input{
-    width: 50%;
+    width: 30%;
 }
 .btn_derecho{
    display: none;
@@ -160,13 +161,15 @@ body{
 #billete{
     margin-top:6px ;
     width: 8vw;
-    height: 4vh;
+    height: 4.3vh;
     display: none;
-    animation: mover 1s linear alternate both;
-    animation-iteration-count: 3;
-    animation-fill-mode: backwards;
+    animation: mover 0.5s linear alternate;
+    animation-fill-mode:none;
+    animation-iteration-count: 7;
+    animation-delay: 0.5s;
 
 }
+
 @keyframes mover {
     from {
       margin-top: 0%;
@@ -194,6 +197,8 @@ body{
 #saldo{
     text-align: center;
     text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
 
 }
 .agregar{
@@ -201,10 +206,14 @@ body{
 }
 .show_agregar{
     display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .animated{
-    animation: CambioColor 10s linear alternate both;
+    animation: CambioColor 5s linear alternate;
     animation-fill-mode: backwards;
 
 }

@@ -22,6 +22,7 @@ var agregar = document.getElementById('agregar');
 var retiro = document.getElementById('retiro');
 var led = document.getElementById('led');
 var billete = document.getElementById('billete');
+var error = document.getElementById('error');
 var salir = document.getElementById('salir');
 
 
@@ -153,8 +154,11 @@ aceptar.addEventListener('click', ()=>{
         display_datos.classList.add('show_display');
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
         agregar.classList.add('show_agregar');
-        saldo.classList.remove('saldo');
+        saldo.style.display="none";
         
+    }else{
+        error.innerHTML="Error de Contraseña";
+        nip.value="";
     }
     if (usuario == "francisco" && resultado == "5555"){
         boton1.classList.remove('btn_izquierdo');
@@ -168,8 +172,11 @@ aceptar.addEventListener('click', ()=>{
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
         agregar.classList.add('show_agregar');
         saldo.classList.remove('saldo');
-
-        
+        saldo.style.display="none";
+     
+    }else{
+        error.innerHTML="Error de Contraseña";
+        nip.value="";
     }
 
     if (usuario == "jesus" && resultado == "9999"){
@@ -184,8 +191,11 @@ aceptar.addEventListener('click', ()=>{
         txt_titulo.innerHTML = `Bienvenido ${usuario}`;
         agregar.classList.add('show_agregar');
         saldo.classList.remove('saldo');
-
+        saldo.style.display="none";
         
+    }else{
+        error.innerHTML="Error de Contraseña";
+        nip.value="";
     }
 });
 
@@ -194,13 +204,16 @@ btn_saldo.addEventListener('click',()=>{
     let usuario = document.getElementById('usuario').value;
     console.log(personas[0].nombre == usuario);
     if (personas[0].nombre == usuario){
+        saldo.style.display="flex";
         saldo.innerHTML = `Saldo ${personas[0].saldo}`
 
 
     }else if(personas[1].nombre == usuario){
+        saldo.style.display="flex";
         saldo.innerHTML = `Saldo ${personas[1].saldo}`
 
     }else if(personas[2].nombre == usuario){
+        saldo.style.display="flex";
         saldo.innerHTML = `Saldo ${personas[2].saldo}`
 
     }else{
@@ -244,7 +257,8 @@ btn_saldo.addEventListener('click',()=>{
    btn_retiro.addEventListener('click', ()=>{
     let usuario = document.getElementById('usuario').value;
     let suma =0;
-    const valid =  billete.style.display = 'none'
+    const valid =  billete.style.display = 'none';
+    
     if (agregar.classList.contains('show_agregar') && valid && !led.classList.contains('animated')){
         if (personas[0].nombre == usuario){
             resta= parseInt(personas[0].saldo) - parseInt(agregar.value)
@@ -253,7 +267,7 @@ btn_saldo.addEventListener('click',()=>{
             agregar.classList.remove('show_agregar');
             led.classList.add('animated');
             billete.style.display = 'flex';
-
+         
     
         }else if(personas[1].nombre == usuario){
             resta= parseInt(personas[1].saldo) - parseInt(agregar.value)
@@ -286,7 +300,7 @@ btn_saldo.addEventListener('click',()=>{
 
 salir.addEventListener('click', ()=>{
     document.getElementById('nip').value=0;
-    document.getElementById('usuario').value=="";
+    usuario = document.getElementById('usuario').value = "";
     info.classList.add('info');
     info.classList.remove('info_hidden');
     boton1.classList.add('btn_izquierdo');
@@ -296,6 +310,8 @@ salir.addEventListener('click', ()=>{
     agregar.classList.remove('show_agregar');
     display_datos.classList.remove('show_display');
     display_datos.classList.add('display_datos');
+    billete.style.display = 'none';
+    error.style.display="none"
 
 
    });
