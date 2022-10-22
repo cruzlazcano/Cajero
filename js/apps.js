@@ -311,7 +311,7 @@ salir.addEventListener('click', ()=>{
     display_datos.classList.remove('show_display');
     display_datos.classList.add('display_datos');
     billete.style.display = 'none';
-    error.style.display="none"
+    error.style.display="none";
 
 
    });
